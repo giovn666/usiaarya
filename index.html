@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kategori Usia</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+    }
+    input[type="number"] {
+        padding: 8px;
+        width: 50px;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+    <h2>Masukkan Usia Anda</h2>
+    <input type="number" id="usiaInput" min="0" placeholder="Usia">
+    <button onclick="kategoriUsia()">Cek Kategori</button>
+    <p id="kategori"></p>
+
+    <script>
+        function kategoriUsia() {
+            var usia = parseInt(document.getElementById('usiaInput').value);
+            var kategori = '';
+
+            if (usia < 2) {
+                kategori = 'Bayi';
+            } else if (usia < 6) {
+                kategori = 'Balita';
+            } else if (usia < 14) {
+                kategori = 'Anak-anak';
+            } else if (usia < 18) {
+                kategori = 'Remaja';
+            } else if (usia < 25) {
+                kategori = 'Dewasa';
+            } else if (usia < 75) {
+                kategori = 'Tua';
+            } else {
+                kategori = 'Lanjut usia';
+            }
+
+            document.getElementById('kategori').innerText = `Anda termasuk dalam kategori: ${kategori}`;
+        }
+    </script>
+&copy;Aryaganteng
+</body>
+</html>
